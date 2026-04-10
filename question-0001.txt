@@ -1,0 +1,15 @@
+Problema:
+
+Tienes un DataFrame con columnas "fecha" y variables numéricas.
+
+Tu misión:
+Escribe una función llamada crear_features_temporales(df, target_col) que:
+
+1. Convierta "fecha" a tipo datetime.
+2. Genere nuevas variables:
+   - día de la semana
+   - mes
+   - si es fin de semana (0 o 1)
+3. Use estas variables como X y target_col como y.
+4. Entrene un modelo RandomForestRegressor.
+5. Devuelva la importancia de las variables.
