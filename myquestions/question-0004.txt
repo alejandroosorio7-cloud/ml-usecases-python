@@ -1,0 +1,12 @@
+Problema:
+
+Tienes un dataset con muchas variables numéricas.
+
+Tu misión:
+Escribe una función llamada aplicar_pca(df, n_componentes) que:
+
+1. Escale los datos.
+2. Aplique PCA.
+3. Devuelva:
+   - datos transformados
+   - varianza explicada
