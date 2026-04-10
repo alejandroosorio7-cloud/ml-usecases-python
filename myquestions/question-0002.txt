@@ -1,0 +1,14 @@
+Problema:
+
+Tienes un dataset con variables numéricas y categóricas.
+
+Tu misión:
+Escribe una función llamada pipeline_preprocesamiento_modelo(df, target_col) que:
+
+1. Separe variables numéricas y categóricas.
+2. Cree un ColumnTransformer:
+   - escale numéricas
+   - codifique categóricas
+3. Cree un Pipeline con LogisticRegression.
+4. Entrene el pipeline.
+5. Devuelva el pipeline entrenado.
