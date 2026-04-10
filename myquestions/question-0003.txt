@@ -1,0 +1,11 @@
+Problema:
+
+Quieres evaluar un modelo de clasificación en datos desbalanceados.
+
+Tu misión:
+Escribe una función llamada evaluar_con_stratified_kfold(df, target_col) que:
+
+1. Separe X e y.
+2. Use StratifiedKFold (5 folds).
+3. Entrene un DecisionTreeClassifier.
+4. Devuelva promedio y desviación estándar del accuracy.
