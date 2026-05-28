@@ -1,8 +1,4 @@
-import pandas as pd
-import numpy as np
-
 from sklearn.cluster import KMeans
-
 
 def agrupar_pacientes(df, n_clusters):
 
