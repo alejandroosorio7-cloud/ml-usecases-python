@@ -29,3 +29,18 @@ Debido a que KMeans utiliza inicialización aleatoria de centroides cuando no se
 El validador automático compara el contenido exacto del array retornado mediante comparación numérica directa (`np.allclose`), por lo que dos agrupamientos equivalentes matemáticamente pueden ser considerados incorrectos si las etiquetas asignadas cambian de orden entre ejecuciones.
 
 Por esta razón, el resultado puede clasificarse como “incorrect output: Array contents do not match” aunque la implementación reproduzca correctamente la lógica solicitada por el generador.
+Lo cual genera que en ocaciones el validador ejecute la solución como correcta y otras veces no, como se observa a continuación:
+
+total answers checked:    4.
+usecase generator errors: 0 question_ids:[]
+answers with run errors:  0 question_ids:[]
+answers correct:          4 question_ids:['0172', '0279', '0586', '0597']
+answers incorrect:        0 question_ids:[]
+
+total answers checked:    4.
+usecase generator errors: 0 question_ids:[]
+answers with run errors:  0 question_ids:[]
+answers correct:          3 question_ids:['0279', '0586', '0597']
+answers incorrect:        1 question_ids:['0172']
+
+Estos resultados salieron después de ejecutar varias veces el validador.
