@@ -1,1 +1,31 @@
-Todas las respuestas fueron validadas correctamente con los generadores de casos de uso proporcionados.
+Diagnóstico de respuestas no validadas automáticamente
+
+Respuesta: answer-0172.py
+
+La función implementada en answer-0172.py replica exactamente la lógica especificada en el generador de casos de uso asociado a la pregunta 0172.
+
+En el generador de casos de uso, específicamente en las líneas donde se construye el modelo KMeans:
+
+```python
+kmeans = KMeans(n_clusters=n_clusters, n_init=10)
+labels = kmeans.fit_predict(df)
+```
+
+no se define el parámetro random_state.
+
+De forma equivalente, en mi solución (answer-0172.py), se implementa:
+
+```python
+kmeans = KMeans(
+    n_clusters=n_clusters,
+    n_init=10
+)
+
+labels = kmeans.fit_predict(df)
+```
+
+Debido a que KMeans utiliza inicialización aleatoria de centroides cuando no se especifica random_state, las etiquetas de cluster generadas pueden variar entre ejecuciones distintas aun utilizando exactamente el mismo dataset y el mismo código.
+
+El validador automático compara el contenido exacto del array retornado mediante comparación numérica directa (`np.allclose`), por lo que dos agrupamientos equivalentes matemáticamente pueden ser considerados incorrectos si las etiquetas asignadas cambian de orden entre ejecuciones.
+
+Por esta razón, el resultado puede clasificarse como “incorrect output: Array contents do not match” aunque la implementación reproduzca correctamente la lógica solicitada por el generador.
